@@ -23,3 +23,23 @@ export async function postFilme(filme) {
     const response=await fetch(url,options)
     return response.ok
 }
+export async function putFilme(filme) {
+    const url=`http://localhost:8080/V2/ACMEFilmes/filme/${filme.id}`
+    const options={
+        method:'PUT',
+        headers:{
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify(filme)
+    }
+    const response=await fetch(url,options)
+    return response.ok
+}
+export async function deleteFilme(id) {
+    const url=`http://localhost:8080/V2/ACMEFilmes/filme/${id}`
+    const options={
+        method:'DELETE'
+    }
+    const response=await fetch(url,options)
+    return response.ok
+}

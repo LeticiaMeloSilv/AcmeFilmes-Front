@@ -1,33 +1,53 @@
-// 'use strict'
+'use strict'
 
-// import{getFilmes, getFilme,postFilme} from'./filmes.js'
+import{getFilmes,getFilme,postFilme,putFilme,deleteFilme} from'./filmes.js'
 
-// function criarCard(filme) {
-//     const card=document.createElement('div')
+function criarCard(filme) {
+    const main=document.getElementById('main')
 
-//     const titulo=document.createElement('h2')
-//     titulo.textContent=filme.nome
+    const card=document.createElement('div')
+    card.classList.add('cursor-pointer')
 
-//     const text=document.createElement('textarea')
-//     text.textContent=filme.sinopse
+    const preco=document.createElement('h4')
+    preco.classList.add('flex','justify-center','bg-roxo_claro','text-branco','rounded-xl','p-1','w-20','absolute','mt-28','ml-44')
+    preco.textContent=filme.valor_unitario
 
-//     card.replaceChildren(titulo,text)
+    const image=document.createElement('img')
+    image.src=filme.foto_capa
+    image.classList.add('w-64','border-1','rounded-3xl','h-36')
 
-//     return card
-// }
+    const content=document.createElement('div')
+    content.classList.add('p-2','bg-azul','rounded-xl','h-36','overflow-hidden','text-wrap','truncate')
 
-// // console.table(await getFilmes())
-// // console.table(await getFilme(2))
+    const titulo=document.createElement('h2')
+    titulo.textContent=filme.nome
+    titulo.classList.add('mt-4')
 
-// async function preencherContainer(){
-//     const container=document.querySelector('body')
-//     const filmes=await getFilmes()
-//     filmes.forEach(filme => {             
-//         const card=criarCard(filme)
-//         container.appendChild(card)
-//     });
-// }
-// preencherContainer()
+    const sinopse=document.createElement('h3')
+    sinopse.textContent=filme.sinopse
+
+    const gradiente=document.createElement('div')
+    gradiente.classList.add('bg-gradient-to-t','from-gradiente_azul_100','to-gradiente_azul_0','h-16','w-64','rounded-xl')
+
+    content.replaceChildren(titulo,sinopse)
+    card.replaceChildren(preco,image,content,gradiente)
+    main.appendChild(card)
+
+    return main
+}
+
+// console.table(await getFilmes())
+// console.table(await getFilme(2))
+
+async function preencherContainer(){
+    const container=document.querySelector('body')
+    const filmes=await getFilmes()
+    filmes.forEach(filme => {             
+        const main=criarCard(filme)
+        container.appendChild(main)
+    });
+}
+preencherContainer()
 
 // //Testes
 // const filme={

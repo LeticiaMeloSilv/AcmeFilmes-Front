@@ -13,7 +13,8 @@ module.exports = {
         'roxo_claro':'#363062',
         'azul':'#435585',
         'gradiente_azul_100':'rgba(42, 59, 104, 1)',
-        'gradiente_azul_0':'rgba(67, 85, 133, 0)'
+        'gradiente_azul_0':'rgba(67, 85, 133, 0)',
+        'focus':'rgba(42, 59, 104, 0.67)'
       },
       backgroundSize: {
         'auto': 'auto',
@@ -24,7 +25,7 @@ module.exports = {
       },
     extend: {
       backgroundImage: {
-        'background_lupa': "url('./src/img/lupa.png')",
+        background_lupa: "url('./src/img/lupa.png')",
       },
     },
   },
