@@ -13,7 +13,7 @@
 <body class="bg-roxo_cinza">
     <nav>
         <div class="flex flex-row items-center justify-between p-6 font-sans">
-            <img src="./img/logo.png" alt="Logo TouchDown">
+            <img src="./img/logo.png" alt="Logo Acme">
             <div class="w-2/12 flex items-center justify-center">
                 <a class="text-lilas pr-4" href="./">Login</a>
                 <a class="text-amarelo border-2	rounded-3xl p-2 border-amarelo" href="./">Sign in</a>
@@ -21,11 +21,11 @@
         </div>
         <hr class="border-1 border-roxo">
         <input type="search"
-            class="placeholder-lilas bg-roxo p-2 rounded-full border-none bg-background_lupa bg-no-repeat bg-lupa w-5/6 mx-32 my-8 bg-right"
-            name="tema" id="tema" placeholder="Buscar Filmes..." />
+            class="placeholder-lilas text-branco bg-roxo p-2 rounded-full border-none bg-background_lupa bg-no-repeat bg-lupa w-5/6 mx-32 my-8 bg-right"
+            name="pesquisa" id="pesquisa" placeholder="Buscar Filmes..." />
     </nav>
-    <main id="main" class="flex gap-8">
-        <div class="cursor-pointer">
+    <main id="main" class="flex gap-8 flex-wrap justify-center items-center	">
+        <!-- <div class="cursor-pointer">
             <h4 class="flex justify-center bg-roxo_claro text-branco rounded-xl p-1 w-20 absolute mt-28 ml-44 ">R$ 99,99
             </h4>
             <div class="bg-branco w-64 border-1 rounded-3xl h-36"><br><br><br><br><br>
@@ -40,8 +40,37 @@
                 </div>
             </div>
             <div class="bg-gradient-to-t from-gradiente_azul_100 to-gradiente_azul_0 h-16 w-64 mt-16 rounded-xl"></div>
-        </div>
+        </div> -->
     </main>
+    <div id="fundo" class="absolute top-0 left-0 bg-roxo_cinza_claro h-full w-full z-10 flex flex-row hidden">
+        <!-- <div class="bg-roxo_cinza h-screen w-5/12 flex flex-col justify-between items-start p-8">
+            <img src="./img/seta-esquerda (1) 1.png" alt="">
+            <div class="flex justify-center w-full">
+                <img src="./img/capa do filme.png" alt="">
+            </div>
+            <img src="./img/logo_completa.png" alt="">
+        </div>
+        <div class="flex flex-col pt-36 pb-24 pr-32 pl-20 gap-12">
+            <div class="h-1/2">
+                <h1 class="text-amarelo text-4xl">Titulo do filme</h1>
+                <h2 class="text-branco text-2xl	">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui officiis
+                    deserunt tempora et voluptatibus quaerat, molestias eius dolorem deleniti unde nulla necessitatibus
+                    veritatis labore perferendis ab facilis delectus reprehenderit illo.</h2>
+            </div>
+            <div>
+                <h3 class="text-branco text-xl">Data de lancamento: 00/00/0000</h3>
+                <h3 class="text-branco text-xl">Duração: 1h30min</h3>
+            </div>
+            <div class="flex gap-1">
+                <img src="./img/classificacao.png" alt="">
+                <h4 class="text-branco">Classificacao<br>Livre</h4>
+            </div> -->
+            <div id="botoes" class=" flex h-full items-end justify-center gap-20">
+                <button class="text-amarelo text-3xl px-24 py-5 border-roxo rounded-3xl border-2 cursor-pointer">Assistir</button>
+                <button class="text-amarelo text-3xl px-24 py-5 bg-roxo rounded-3xl cursor-pointer">Comprar</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

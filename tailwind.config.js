@@ -14,7 +14,8 @@ module.exports = {
         'azul':'#435585',
         'gradiente_azul_100':'rgba(42, 59, 104, 1)',
         'gradiente_azul_0':'rgba(67, 85, 133, 0)',
-        'focus':'rgba(42, 59, 104, 0.67)'
+        'focus':'rgba(42, 59, 104, 0.67)',
+        'roxo_cinza_claro':'#474E68'
       },
       backgroundSize: {
         'auto': 'auto',
