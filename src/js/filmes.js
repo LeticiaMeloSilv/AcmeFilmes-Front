@@ -13,7 +13,7 @@ export async function getFilme(id) {
 }
 
 export async function getFilmeFiltro(filtro) {
-    const url =`http://localhost:8080/V2/ACMEFilmes/filme/filtro?nome=${filtro}`
+    const url =`http://localhost:8080/V2/ACMEFilmes/filmes/filtro?nome=${filtro}`
     const response=await fetch(url)
     const data= await response.json()
     return data.filmes
