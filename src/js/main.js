@@ -19,7 +19,7 @@ function criarCard(filme) {
 
     const image = document.createElement('img')
     image.src = filme.foto_capa
-    image.classList.add('w-64', 'border-1', 'rounded-3xl', 'h-36')
+    image.classList.add('w-64', 'border-1', 'rounded-3xl', 'max-h-32', 'min-h-32')
 
     const content = document.createElement('div')
     content.classList.add('p-2', 'bg-azul', 'rounded-xl', 'h-36', 'overflow-hidden', 'text-wrap', 'truncate')
