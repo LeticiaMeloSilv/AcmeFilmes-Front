@@ -1,9 +1,38 @@
 'use strict'
 
-import { getFilmes, getFilme,getFilmeFiltro, postFilme, putFilme, deleteFilme } from './filmes.js'
+import { getFilmes, getFilme,getFilmeFiltro, postFilme, putFilme, deleteFilme,getClassificacao } from './filmes.js'
 
+
+const search = new URLSearchParams(window.location.search).get('search')
+const searchBar = document.getElementById('pesquisa')
+
+async function pesquisar(){
+  const pesquisarFilme = await getFilmeFiltro(searchBar.value)
+ console.log(pesquisarFilme)
+  const listaFilmes = pesquisarFilme
+  apagarListaFilmes()
+
+  listaFilmes.forEach(filme => {
+    console.log(filme)
+    criarCard(filme)
+  })
+}
+
+searchBar.addEventListener('keypress', (event)=>{
+  if(event.key === "Enter"){
+    pesquisar()
+  }
+})
+
+function apagarListaFilmes(){
+  while(main.firstChild){
+    main.removeChild(main.firstChild)
+  }
+}
+
+
+const main = document.getElementById('main')
 function criarCard(filme) {
-    const main = document.getElementById('main')
 
     const card = document.createElement('div')
     card.classList.add('cursor-pointer')
@@ -44,7 +73,7 @@ function criarCard(filme) {
 
 const divFundo = document.getElementById('fundo')
 
-async function CriarCardFocusFilme(filme) {
+async function CriarCardFocusFilme(filme, classificacao) {
     divFundo.classList.remove('hidden')
 
     const lateral_esquerda = document.createElement('div')
@@ -84,6 +113,10 @@ async function CriarCardFocusFilme(filme) {
     data_lancamento.textContent = `Data de lançamento: ${filme.data_lancamento}`
     data_lancamento.classList.add('text-branco', 'text-xl')
 
+    const genero = document.createElement('h3')
+    genero.textContent = `Data de lançamento: ${filme.genero}`
+    genero.classList.add('text-branco', 'text-xl')
+
     const duracao = document.createElement('h3')
     duracao.textContent = `Duração: ${filme.duracao}`
     duracao.classList.add('text-branco', 'text-xl')
@@ -93,12 +126,12 @@ async function CriarCardFocusFilme(filme) {
 
     const img_classificacao = document.createElement('img')
     // img_classificacao.src=filme.classificacao
-    img_classificacao.src ='./img/classificacao.png'
+    img_classificacao.src =classificacao.classificacao_foto
 
     const text_classificacao = document.createElement('h4')
     text_classificacao.classList.add('text-branco')
     // text_classificacao.textContent=filme.classificacao_escrita
-    text_classificacao.textContent = 'Classificacao Livre'
+    text_classificacao.textContent = `Classificacao ${classificacao.classificacao}`
 
     const botoes = document.getElementById('botoes')
 
@@ -116,8 +149,9 @@ async function CriarCardFocusFilme(filme) {
 
 async function abrirFilme(idFilme) {
     const filme = await getFilme(idFilme)
+    const classificacao= await getClassificacao(idFilme)
 
-    CriarCardFocusFilme(filme)
+    CriarCardFocusFilme(filme, classificacao)
 }
 
 function fecharFilme() {
@@ -138,7 +172,6 @@ async function preencherContainer() {
 
 preencherContainer()
 
-const pesquisa = document.getElementById('pesquisa').value
 
 //Testes
 // const filme={
