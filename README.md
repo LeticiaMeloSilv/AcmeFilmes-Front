@@ -44,6 +44,6 @@ Protótipo | FRONT-END | Landing Page | CMS
 [Figma][link1] | [projeto][link2] | [gitPreview][link3] | [link][link3] 
 
 
-[link1]: [https://www.figma.com/](https://www.figma.com/design/C9sOs5Hbu6cRjGJuFL596n/ACME-FILMES?node-id=1%3A29&t=DHyGdW8TdQxB8zBa-1)
-[link2]: https://github.com/
-[link3]: [https://github.com/](https://github.com/LeticiaMeloSilv/dashboard-acme.git)
+[link1]: https://www.figma.com/design/C9sOs5Hbu6cRjGJuFL596n/ACME-FILMES?node-id=1%3A29&t=DHyGdW8TdQxB8zBa-0
+[link2]: https://github.com/LeticiaMeloSilv/AcmeFilmes-Front
+[link3]: https://github.com/LeticiaMeloSilv/dashboard-acme.git
